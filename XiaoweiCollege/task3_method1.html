@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task3</title>
+    <style type="text/css">
+        /* 公共样式 */
+        .container { margin: 20px; padding: 20px; background-color: #eee; border: 1px solid #999; position: relative; overflow: auto;}
+        .logo { width: 80px; height: 80px;}
+        .main,.left,.right { background-color: #fff; border: 1px solid #999; }
+
+        /* 布局关键 */
+        .main { margin-left: 220px; margin-right: 140px; }
+        .left { width: 200px; float: left ;}
+        .right { width: 120px; float: right;}
+
+        /* 左边栏 */
+        .left .team {overflow: hidden; padding: 20px;}
+        .left .team .logo { float: left; margin-right: 20px;}
+        .left .team span { font-size: 14px;font-weight: 600;}
+
+        /* 中间主体 */
+        .main { padding: 20px;}
+
+        /* 右边栏 */
+        .right { padding: 20px; box-sizing:border-box;}
+        .right .logo { margin-bottom: 20px;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <div class="team">
+                <img class="logo" src="./images/example.jpg" alt="">
+                <span>我的团队</span>
+            </div>
+        </div>
+        <div class="right">
+            <div class="personnel"><img class="logo" src="./images/example.jpg" alt=""></div>
+            <div class="personnel"><img class="logo" src="./images/example.jpg" alt=""></div>
+            <div class="personnel"><img class="logo" src="./images/example.jpg" alt=""></div>
+            <div class="personnel"><img class="logo" src="./images/example.jpg" alt=""></div>
+        </div>
+        <div class="main">
+            <h2>我的团队介绍</h2>
+            <article>
+                <p>我的团队的名字叫“我的团队”。为什么会取这个名字呢？因为我的团队只有一位成员，自然就是我了。我叫Jasery，是团队的饿负责人兼全部成员。主要负责团队的所有事务。</p>
+                <p>在这次百度前端学院中，希望可以完成所有任务，虽然我的团队很菜，但是我的团队一定坚持不放弃。我的团队上下同心，相互帮助，关爱彼此，我身为负责人，很为他们感到自豪。</p>
+                <p>下面是我的团队所做过的一些牛掰的东西：</p>
+                <ul>
+                    <li>牛掰的东西1</li>
+                    <li>牛掰的东西2</li>
+                    <li>牛掰的东西3</li>
+                    <li>牛掰的东西4</li>
+                </ul>
+                <p>最后，谢谢大家的支持。</p>
+            </article>
+        </div>
+    </div> 
+</body>
+</html>
