@@ -1,0 +1,305 @@
+
+/* 整体样式 */
+body { padding: 0;margin: 0;border: 0;background-color: #C0C0C0;}
+#newspaper { 
+    width: 980px; 
+    height: 1386px; 
+    margin: auto; 
+    margin-top: 20px; 
+    background-color: #fff;
+    padding: 0 44px;
+    box-sizing: border-box;
+}
+
+/* 头部 */
+header {
+    font-size: 12px;
+    font-family: SimHei;    
+    border-bottom: 2px solid #938E8C;
+    position: relative;
+}
+header .logo {
+    background-color: #D55D5C;
+    height: 61px;
+    width: 110px;
+    position: relative;    
+}
+header .logo p {
+    margin: 5px 0;
+    position: absolute;
+    color: #fff;
+    bottom: 0;
+}
+header span {
+    color: #D45D5C;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+
+
+/* 头条 */
+#headline {
+    margin-top: 35px;
+    overflow: auto;
+}
+#headline .pic {
+    float: left;
+}
+#headline .pic img {
+    width: 641px;
+    height: 301px;
+}
+#headline .sketch {
+    height: 301px;
+    width: 203px;
+    border-top: 2px solid #CC8091;
+    float: right;
+    padding-top: 10px;
+    box-sizing: border-box;
+    font-family: Microsoft YaHei;
+}
+#headline .sketch .main-title  {
+    font-size: 18px;
+    color: #000;
+    /*line-height: 24px;*/
+    /*text-decoration: underline;*/
+    font-weight: 500;
+    margin: 0 ;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+}
+#headline .sketch .main-title span {
+    font-size: 24px;
+}
+#headline .sketch .sub-title {
+    font-family: KaiTi;
+    font-size: 12px;
+    margin: 5px 0 0 0;
+    line-height: 10px;
+    /*font-style: italic;*/
+}
+#headline .sketch .sub-title:last-child {
+    margin-top: 0px;
+}
+#headline .sketch .big-num {
+    font-size: 116px;
+    line-height: 141px;
+    color: #75B86B;
+    font-style: italic;
+    margin: 0px 0px 0px -20px;
+}
+#headline .sketch .bottom-font {
+    height: 55px;
+}
+#headline .sketch .bottom-font>div {
+    display: inline-block;
+}
+#headline .sketch .bottom-font div:first-child {
+    font-size: 55px;
+    color: #cc8091;
+    line-height: 35px;
+    /*margin-top: -10px;*/
+}
+#headline .sketch .bottom-font div:last-child p:first-child {
+    font-size: 21px;
+    color: #cc8091;  
+    margin: 0;
+    margin-bottom: -8px;
+}
+#headline .sketch .bottom-font div:last-child p:last-child {
+    font-size: 12px;
+    margin: 0;
+    color: #ADA9A8;
+}
+
+/*文章部分*/
+.short-article {
+    margin-top: 20px;
+    font-family: Microsoft YaHei;
+}
+.short-article figure {
+    width: 25%;
+    float: left;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 10px;
+}
+.short-article figure figcaption {
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: underline; 
+}
+.short-article figure p {
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0.7;
+}
+.green {
+    color: #418C59;
+}
+.yellow {
+    color: #D2994F;
+}
+.pink {
+    color: #CC7680;
+}
+.short-article figure ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    line-height: 16px;
+    opacity: 0.7;
+}
+.short-article figure ul span {
+    color: #cd4a48;
+    font-style: italic;
+}
+.short-article:after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+
+/*底部文章*/
+.long-article {
+    overflow: hidden;
+}
+.long-article .main-article {
+    /*height: 300px;*/
+    width: 415px;
+    float: left;
+}
+.long-article .preview {
+    /*height: 700px;*/
+    width: 458px;
+    float: right;
+}
+
+.long-article .main-article .big-title {
+    font-size: 42px;
+    color: #11456B;
+    font-weight: 600;
+    font-family: SimHei;
+    border-bottom: 2px solid #11456B;
+    padding-bottom: 10px;
+}
+.long-article .main-article .big-title span:last-child {
+    font-size: 33px;
+}
+.long-article .main-article .big-title .first-world {
+    font-size: 72px;
+    color: #F5E327;
+    font-style: italic;
+}
+
+
+.long-article .main-article .main-content {
+    font-size: 12px;
+    color: #767777;
+    font-family: SimSun;
+    line-height: 16px;
+    padding-top: 10px;
+}
+.long-article .main-article .main-content .first-world{
+    font-family: Microsoft YaHei;
+    font-size: 70px;
+    line-height: 70px;
+    color: #F5E327;
+    display: block;
+    float: left;
+    padding: 0 10px 5px 0;
+}
+.long-article .main-article .main-content img {
+    float: right;
+    margin: 10px;
+    margin-right: 0;
+    width: 168px;
+    height: 288px;
+}
+
+.long-article .preview .catalog {
+    margin-top: 50px;
+    overflow: hidden;
+    background-color: #EEEDD6;
+}
+.long-article .preview .catalog ul {
+    margin: 20px 10px;
+    font-family: SimSun;
+    list-style-image:url("./images/task6_4.png");
+    list-style-type:square;
+}
+.long-article .preview .catalog ul li {
+    font-size: 16px;
+    line-height: 20px;
+    height: 50px;
+}
+.long-article .preview .catalog ul li span {
+    font-size: 12px;
+    color: #5a5b5b;
+}
+.long-article .preview .supplement .red-title {
+    width: 260px;
+    height: 160px;
+    background-color: #D45D5C;
+    float: left;
+    margin-right: 10px;
+}
+.long-article .preview .supplement .quote {
+    font-size: 14px;
+    font-family: SimHei;
+    color: #5a5b5b;
+    line-height: 16px;   
+    font-style: italic;
+}
+.long-article .preview .supplement .quote span {
+    font-size: 72px;
+    color: #d45d5c;
+    line-height: 30px;
+}
+
+.long-article .preview .catalog .supplement .red-title {
+    padding: 37px 10px;
+    box-sizing: border-box;
+}
+.long-article .preview .catalog .supplement .red-title> div {
+    height: 86px;
+    float: left;
+}
+
+.long-article .preview .catalog .supplement .red-title .big-zero {
+    font-size: 100px;
+    line-height: 86px;
+    color: #fff;
+    width: 25%;
+    font-weight: 600;
+}
+
+.long-article .preview .catalog .supplement .red-title .en-num {
+    border-left: 2px solid #fff;
+    width: 75%;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 5px;
+}
+.long-article .preview .catalog .supplement .red-title .en-num span:first-child {
+    font-size: 21px;
+    line-height: 24px;
+    font-style: italic;
+    font-family: SimHei;
+}
+.long-article .preview .catalog .supplement .red-title .en-num span:last-child {
+    font-size: 12px;
+    line-height: 6px;
+    font-family: SimHei;
+}
+/*脚部*/
+footer {
+    margin-top: 20px;
+    border-top: 1px solid #938e8c;
+    text-align: right;
+    font-size: 12px;
+    color: #d45d5c;
+    font-family: SimHei;
+}
