@@ -1,0 +1,469 @@
+
+body {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+.content {
+  width: 1280px;
+  margin: auto;
+}
+
+.clearfix:after {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+.txtCenter {
+  text-align: center;
+}
+.borderbox {
+  box-sizing: border-box;
+}
+.border(@color:#fff; @weight:1px ) {
+  border:@weight solid @color;
+}
+@baseRed: #DF4C4A;
+@imgUrl: '../images/task7';
+@baseGrep: #767777;
+@baseBg: #ededed;
+header {
+  padding: 0 60px;
+  height: 60px;
+  .logo {
+    float: left;
+    img{
+      float: left;
+      margin-top: 15px;
+      margin-right: 10px;
+    }
+    p {
+      margin:0;
+      line-height: 60px;
+      font-size: 30px;
+      float: left;
+    }
+  }
+  nav {
+    float: right;
+    ul {
+      list-style:none;
+      padding:0;
+      margin:0;
+      font-size: 18px;
+
+      li {
+        display: inline-block;
+        height:60px;
+        line-height:60px;
+        padding:0 20px;
+        .borderbox;
+        margin:0;
+        a {
+          text-decoration: none;
+        }
+        &.login {
+          img {
+            display: inline;
+          }
+        }
+        &:hover {
+          border-bottom: 4px solid @baseRed;
+          a{
+            color: @baseRed;
+          }
+        }
+      }
+    }
+  }
+}
+
+.start {
+  height:568px;
+  background-image: url("@{imgUrl}/index.png");
+  position: relative;
+
+  .start-content {
+    position: absolute;
+    top:150px;
+    left:100px;
+    color: #ffffff;
+
+    p {
+      font-size: 25px;
+      margin:0;
+    }
+    .start-title {
+      font-size: 60px;
+      margin-bottom: 10px;
+    }
+    .start-buttom {
+      width:330px;
+      height: 60px;
+      background-color: @baseRed;
+      font-size:30px;
+      line-height:60px;
+      text-align: center;
+      margin-top: 60px;
+    }
+  }
+}
+
+.descriptions {
+  padding: 30px 0;
+
+  .description-item {
+    width:25%;
+    float: left;
+
+    &:last-child .description-content {
+      border:none;
+    }
+    img {
+      margin:20px auto;
+      display: block;
+    }
+
+    .description-content {
+      padding:0 70px;
+      .borderbox;
+      border-right:1px solid #989999;
+      color: @baseGrep;
+      .txtCenter;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.new-world {
+  background-color: @baseBg;
+  padding:70px 0 30px 0;
+
+  .book {
+    width: 100%;
+    img {
+      display: block;
+      margin:auto;
+    }
+  }
+
+  .word {
+    font-size: 50px;
+    .txtCenter;
+    color: @baseGrep;
+  }
+}
+
+.news {
+  height:340px;
+  background-image: url("@{imgUrl}/news.png");
+
+  .city-info {
+    color: #ffffff;
+    .txtCenter;
+    padding:60px 0;
+
+    p:first-child {
+      font-size: 25px;
+      margin:0;
+    }
+    p:last-child {
+      font-size: 18px;
+    }
+  }
+
+  .city-select {
+    padding:0 85px;
+
+    select,button {
+      width: 235px;
+      height:35px;
+      margin-right: 35px;
+      border:0;
+    }
+    select {
+      appearance:none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      background: url("@{imgUrl}/drowdown.png") no-repeat scroll right 10px center transparent ;
+      background-color: #fff;
+      color: @baseGrep;
+      padding:0 10px;
+    }
+    button {
+      background-color: @baseRed;
+      font-size: 15px;
+      letter-spacing: 10px;
+      color: #ffffff;
+    }
+  }
+}
+
+.painting {
+  background-color: @baseBg;
+  padding:60px;
+  .txtCenter;
+  figure {
+    width: 25%;
+    float: left;
+    margin:0;
+    .borderbox;
+    padding:0 35px;
+
+    div {
+      padding:10px 8px;
+      //border:1px solid #CECECE;
+      .border(#cecece);
+      background-color: #ffffff;
+    }
+    figcaption {
+      p {
+        margin:0;
+        &:first-child {
+          font-size:25px;
+          font-weight: 600;
+          margin-top: 10px;
+        }
+        &:last-child {
+          font-size: 14px;
+          color: #818181;
+          margin:5px;
+        }
+      }
+    }
+  }
+}
+
+//.time>div {
+//  height: 565px;
+//  float: left;
+//}
+.time {
+  &>div {
+    height: 565px;
+    float: left;
+  }
+  .beijing-time {
+    background-image: url("@{imgUrl}/time.png");
+    width: 66%;
+
+    &>div {
+      .txtCenter;
+      margin-top: 80px;
+      color: #ffffff;
+      font-weight: 500;
+      p:nth-child(1) {
+        font-size:60px;
+        margin:100px 0 -30px 0;
+      }
+      p:nth-child(2) {
+        font-size: 150px;
+        margin:0;
+      }
+      p:nth-child(3),p:nth-child(4) {
+        font-size: 25px;
+        margin:0 0 10px 0;
+      }
+    }
+  }
+  .other-city {
+    width:34%;
+    .borderbox;
+    padding:100px 70px 0 70px;
+    .txtCenter;
+
+    p {
+      color: @baseGrep;
+      line-height: 30px;
+    }
+    p.title {
+      color: #000;
+      font-size:30px;
+      font-weight: 600;
+      span {
+        color: @baseRed;
+      }
+    }
+    .tab {
+      div {
+        display: inline-block;
+        height:10px;
+        width:10px;
+        border-radius: 50%;
+        .border(@baseGrep);
+        margin:0 6px;
+      }
+      div.active {
+        background-color: @baseGrep;
+      }
+    }
+  }
+}
+
+.see-more {
+  width: 105px;
+  height:35px;
+  color: @baseRed;
+  //border:1px solid @baseRed;
+  .border(@baseRed);
+  font-size: 16px;
+  background-color: #fff;
+  margin:30px;
+}
+
+.new-time {
+  & > div {
+    height:520px;
+    float: left;
+    &:last-child {
+      width: 34%;
+      background-image: url("@{imgUrl}/new-time.png");
+    }
+  }
+  .new-life {
+    width:33%;
+    padding-top: 160px;
+    .txtCenter;
+    .borderbox;
+    font-size: 25px;
+    font-weight: 600;
+  }
+  .new-life.red-bg {
+    color: #fff;
+    background-color: @baseRed;
+    .see-more {
+      background-color: @baseRed;
+      //border:1px solid #fff;
+      .border(#fff);
+      color: #ffffff;
+    }
+  }
+}
+
+.volunteer {
+  padding:100px 0;
+  .slogan {
+    .txtCenter;
+    p:first-child {
+      font-size: 25px;
+    }
+    p:last-child {
+      color: @baseGrep;
+    }
+  }
+  .volunteer-apply {
+    padding:100px 130px;
+    .caluse {
+      width:300px;
+      float: left;
+      .caluse-title {
+        font-size: 20px;
+        font-weight: 600;
+      }
+      .caluse-summary {
+        color: @baseGrep;
+      }
+      .more {
+        .txtCenter;
+        position: relative;
+        a {
+          text-decoration: none;
+          color: @baseGrep;
+        }
+        a:before {
+          content: "▽ ";
+          color: @baseGrep;
+          position: absolute;
+          top: 3px;
+          right: 35px;
+        }
+      }
+    }
+    .apply-form {
+      width:680px;
+      float: right;
+
+      table {
+        width:100%;
+        border-spacing:15px;
+        td {
+          width: 50%;
+          padding:15px;
+          background-color: @baseBg;
+          margin:5px;
+          input,textarea,button {
+            background-color: inherit;
+            border:none;
+          }
+          input {
+            height:20px;
+          }
+          textarea {
+            width:100%;
+            height:100px;
+          }
+          button {
+            width:100%;
+            font-size:16px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+footer {
+  padding-top: 80px;
+  background-color: #33353f;
+
+  .contact-me {
+    .txtCenter;
+    color: #ffffff;
+    font-weight: 500;
+
+    .title {
+      font-size:25px;
+    }
+  }
+  .email {
+    display: inline-block;
+    margin:20px;
+    input,button {
+      height:40px;
+      margin:0;
+      float: left;
+      padding:0;
+      border:0;
+    }
+    input {
+      width: 430px;
+    }
+    button {
+      background-color: @baseGrep;
+      font-size:18px;
+      letter-spacing: 5px;
+      width: 80px;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+  .contact-account figure {
+    display: inline-block;
+    margin:0 10px 30px 10px;
+  }
+  .copyright {
+    background-color: #2F3038;
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+    padding:25px 100px 5px 100px;
+    p:first-child {
+      float: left;
+    }
+    p:last-child {
+      float: right;
+    }
+  }
+}
