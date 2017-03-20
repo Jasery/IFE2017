@@ -1,0 +1,100 @@
+
+body {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    
+    .row:before,
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+    .row>*>div {    
+    /*测试用样式*/    
+        background-color: #EEEEEE;
+        border: 1px solid #AAAAAA;
+        height: 80px;
+    }
+}
+
+.col() {
+    float: left;
+    min-width: 1px;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.build-col(@size,@n){
+    .col-@{size}-@{n} {
+        .col();
+        width: percentage(1/12*@n);   
+    }
+}
+
+@media (max-width:768px) {
+   .container {        
+        .row {
+            .build-col(s,1);
+            .build-col(s,2);
+            .build-col(s,3);
+            .build-col(s,4);
+            .build-col(s,5);
+            .build-col(s,6);
+            .build-col(s,7);
+            .build-col(s,8);
+            .build-col(s,9);
+            .build-col(s,10);
+            .build-col(s,11);
+            .build-col(s,12);
+        }
+    }
+}
+
+@media (min-width:768px) and (max-width:1280px) {
+    .container {        
+        .row {
+            .build-col(m,1);
+            .build-col(m,2);
+            .build-col(m,3);
+            .build-col(m,4);
+            .build-col(m,5);
+            .build-col(m,6);
+            .build-col(m,7);
+            .build-col(m,8);
+            .build-col(m,9);
+            .build-col(m,10);
+            .build-col(m,11);
+            .build-col(m,12);
+        }
+    }
+}
+
+@media (min-width:1280px) {
+    .container {        
+        .row {
+            .build-col(l,1);
+            .build-col(l,2);
+            .build-col(l,3);
+            .build-col(l,4);
+            .build-col(l,5);
+            .build-col(l,6);
+            .build-col(l,7);
+            .build-col(l,8);
+            .build-col(l,9);
+            .build-col(l,10);
+            .build-col(l,11);
+            .build-col(l,12);
+        }
+    }
+}
+
