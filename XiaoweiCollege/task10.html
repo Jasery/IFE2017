@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body,ul { padding: 0; margin: 0;}
+        .content { padding: 20px;}
+        .content div { width: 150px; margin: 10px 0; border: 1px solid red; }
+        .div1 { height: 120px; }
+        .div2 { height: 100px; }
+        .div3 { height: 40px; }
+        .div4 { height: 200px; border: 1px solid blue !important;}
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media(max-width:640px) {
+            .content {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .div4 { order: 1;}
+            .div1 { order: 2;}
+            .div2 { order: 3; align-self: flex-start;}
+            .div3 { order: 4;}            
+        }
+
+    </style>
+    <title>Flex box</title>
+</head>
+<body>
+   <div class="content">
+       <div class="div1"></div>
+       <div class="div2"></div>
+       <div class="div3"></div>
+       <div class="div4"></div>
+   </div>
+</body>
+</html>
