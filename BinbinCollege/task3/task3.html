@@ -1,0 +1,149 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 03</title>
+  </head>
+<body>
+
+  <ul id="source">
+    <li>北京空气质量：<b>90</b></li>
+    <li>上海空气质量：<b>70</b></li>
+    <li>天津空气质量：<b>80</b></li>
+    <li>广州空气质量：<b>50</b></li>
+    <li>深圳空气质量：<b>40</b></li>
+    <li>福州空气质量：<b>32</b></li>
+    <li>成都空气质量：<b>90</b></li>
+  </ul>
+
+  <ul id="resort">
+    <!-- 
+    <li>第一名：北京空气质量：<b>90</b></li>
+    <li>第二名：北京空气质量：<b>90</b></li>
+    <li>第三名：北京空气质量：<b>90</b></li>
+     -->
+
+  </ul>
+
+  <button id="sort-btn">排序</button>
+
+<script type="text/javascript">
+
+var chineseNum = ["零","一","二","三","四","五","六","七","八","九"];
+var chineseCountUnit = ["","十","百","千","万","亿"];
+function numToChinese (num) {
+    var chinese = "";
+    var num =  Number(num);
+    if(typeof num != "number") {
+        return "";
+    }
+    if(num > 0) {
+        if(num < 100000) {
+            var lastIndexNum = num % 10;
+            var temNum = num;
+            var countUnit = 0;
+            do {
+                lastIndexNum = temNum % 10;
+                temNum = parseInt(temNum / 10);    
+                var nextIndex = chineseNum[lastIndexNum] + (lastIndexNum > 0 ? chineseCountUnit[countUnit] : "");  
+                chinese = nextIndex + chinese;
+                countUnit++;
+            } while(temNum > 0);            
+        } else if (num < 100000000) {
+            var wanNum = arguments.callee(parseInt(num / 10000));
+            chinese = wanNum + "万" + arguments.callee(num % 10000);
+        } else {
+            var yiNum = arguments.callee(parseInt(num/100000000));
+            chinese = yiNum + "亿" + arguments.callee(num%100000000);
+        }
+    }
+
+    return chinese;
+}
+
+/**
+ * getData方法
+ * 读取id为source的列表，获取其中城市名字及城市对应的空气质量
+ * 返回一个数组，格式见函数中示例
+ */
+function getData() {
+  /*
+  coding here
+  */
+  var source = document.getElementById("source");
+  var data = new Array();
+  var cityList = source.getElementsByTagName("li");
+  if(cityList.length < 1) return data;
+  for(var i = 0; i < cityList.length; i++) {
+      var cityItem = [];
+      var cityName = cityList[i].firstChild.nodeValue.replace(/空气质量：/,"");      
+      cityItem.push(cityName);
+
+      var score = cityList[i].getElementsByTagName("b");
+      if(score.length > 0) {
+          cityItem.push(score[0].firstChild.nodeValue);
+      }
+      data.push(cityItem);
+  } 
+
+  /*
+  data = [
+    ["北京", 90],
+    ["北京", 90]
+    ……
+  ]
+  */
+  return data;
+}
+
+/**
+ * sortAqiData
+ * 按空气质量对data进行从小到大的排序
+ * 返回一个排序后的数组
+ */
+function sortAqiData(data) {
+    return data.sort(function (a, b) {
+        return a[1] - b[1];
+    });
+}
+
+/**
+ * render
+ * 将排好序的城市及空气质量指数，输出显示到id位resort的列表中
+ * 格式见ul中的注释的部分
+ */
+function render(data) {
+    var resort = document.getElementById("resort");
+    data.forEach(function (cityData ,index, cityList) {
+        var cityItem = document.createElement("li");
+        var rankingText = "第" + numToChinese(index + 1) + "名";
+        var cityRanking = document.createTextNode(rankingText + "," + cityData[0] + "空气质量：");
+        cityItem.appendChild(cityRanking);
+
+        var scroe = document.createElement("b");
+        var scroeText = document.createTextNode(cityData[1]);
+        scroe.appendChild(scroeText);
+
+        cityItem.appendChild(scroe);
+        resort.appendChild(cityItem);
+    });
+}
+
+function btnHandle() {
+  var aqiData = getData();
+  aqiData = sortAqiData(aqiData);
+  render(aqiData);
+}
+
+function init() {
+
+  // 在这下面给sort-btn绑定一个点击事件，点击时触发btnHandle函数\
+  var sortBtn = document.getElementById("sort-btn");
+  sortBtn.onclick = btnHandle;
+}
+
+init();
+
+</script>
+</body>
+</html>
