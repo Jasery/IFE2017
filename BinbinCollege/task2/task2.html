@@ -63,8 +63,8 @@ function numToChinese (num) {
   将空气质量指数大于60的城市显示到aqi-list的列表中
   */
   var qualifiedData = aqiData.filter(function(element, index, array) {
-      return element[1] > 60;
-  });
+      return element[1] > 20;
+  }).sort(function(a,b) {return b[1] - a[1]});
 
   var cityList = document.getElementById("aqi-list");
   qualifiedData.forEach(function(cityData, index, array) {
