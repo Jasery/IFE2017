@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFE Javascript Task4</title>
+    <style>
+        .display-item {
+            height: 45px;
+            line-height: 45px;
+            padding: 0 10px;
+            background-color: red;
+            color: white;
+            margin: 5px;
+            font-size: 36px;
+            display: inline-block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="control">
+        <input type="text" id="text-input">
+        <input type="button" id="left-push" value="左侧入">
+        <input type="button" id="right-push" value="右侧入">
+        <input type="button" id="left-pop" value="左侧出">
+        <input type="button" id="right-pop" value="右侧出">
+    </div>
+    <div id="display">
+        <div class="display-item">1</div>
+    </div>
+    <script>
+        //创建显示的条目
+        function createDisplayItem() {
+            var text = document.getElementById("text-input").value;
+            var textBox = document.createElement("div");
+            textBox.className = "display-item";
+            var textNode = document.createTextNode(text);
+            textBox.appendChild(textNode);
+
+            return textBox;
+        }
+ 
+        //左侧入
+        function leftPush() {
+            var displayElement = document.getElementById("display");
+            var displayItem = createDisplayItem();
+            displayElement.insertBefore(displayItem,displayElement.firstElementChild);
+        }
+
+        //右侧入
+        function rightPush() {
+            var displayElement = document.getElementById("display");
+            var displayItem = createDisplayItem();
+            displayElement.appendChild(displayItem);
+        }
+
+        //左侧出
+        function leftPop() {            
+            var displayElement = document.getElementById("display");
+            var text = displayElement.firstElementChild.innerText;
+            alert(text);
+            displayElement.removeChild(displayElement.firstElementChild);
+        }
+
+        //有测出
+        function rightPop() {
+            var displayElement = document.getElementById("display");
+            var text = displayElement.lastElementChild.innerText;
+            alert(text);
+            displayElement.removeChild(displayElement.lastElementChild);
+        }
+
+        //点击删除元素
+        function removeDisplayItem(event) {
+            event = event || window.event;
+            if(event.target && event.target.className == "display-item") {
+                var text = event.target.innerText;
+                alert(text);
+                event.target.remove();                
+            }            
+        }
+
+        window.onload = function () {
+            //事件绑定
+            document.getElementById("left-push").addEventListener("click", leftPush);
+            document.getElementById("right-push").addEventListener("click",  rightPush);
+            document.getElementById("left-pop").addEventListener("click", leftPop);
+            document.getElementById("right-pop").addEventListener("click", rightPop);
+            document.getElementById("display").addEventListener("click",removeDisplayItem);
+        }
+    </script>
+</body>
+</html>
