@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFE Javascript Task5</title>
+    <style>
+
+.container {
+    text-align: center;
+    margin: 20px;        
+}
+.sort-title {
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+}
+.sort-wrap {
+    text-align: center;
+    height: 500px;
+}
+.sort-wrap .column {
+    width: 30px;
+    margin: 5px;
+    display: inline-block;
+    background-color: #ccc;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+.sort-wrap .column.active {
+    background-color: #888;    
+    border: 1px solid #888;
+}
+.sort-wrap .column.focus{
+    background:#ffcccc;
+    border: 1px solid #ffcccc;
+}
+.sort-wrap .column.hightlight {
+    background-color: #ff6666;
+    border: 1px solid #ff6666;
+}
+.sort-wrap .column:hover {
+    background-color: #f30;
+    border: 1px solid #f30;
+}
+    </style>
+</head>
+<body>    
+    <div class="container">
+        <h1 id="sort-title">冒泡排序</h1>
+        <div class="sort-wrap" id="sortAnimateWrap">
+            <div class="column" style="height:200px;"></div>
+            <div class="column" style="height:100px;"></div>
+            <div class="column" style="height:400px;"></div>
+            <div class="column"></div>
+            <div class="column"></div>
+        </div>
+        <div class="sort-list">
+        </div>
+    </div>
+    <script src="task5.js"></script>
+</body>
+</html>

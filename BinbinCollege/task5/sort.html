@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sort Demo</title>
+    <style>
+        .array div{
+            display: inline-block;
+            padding: 10px;
+            font-size: 18px;
+            line-height: 18px;
+            font-weight: bolder;
+            border: 2px solid red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="array" id="source"></div>
+    <h2>排序后</h2>
+    <div class="array" id="target"></div>
+    <script>
+
+        var baseArray = [23,5,456,2,564,675,3,1,4,534,565,56];
+        window.onload = function() {
+            arrayDisplay("source", baseArray);
+            //bubbleSort(baseArray);
+            //insertSort(baseArray);
+            //selectSort(baseArray);
+            baseArray = quickSort(baseArray);
+            arrayDisplay("target", baseArray);
+        }
+
+        function arrayDisplay(id, array) {
+            var container = document.getElementById(id);
+            array.forEach(function (value, index, array) {
+                var itemElem = document.createElement("div");
+                itemElem.innerText = value;
+                container.appendChild(itemElem);
+            });
+        }
+
+        function swap(array, firstIndex, lastIndex) {
+            var temp = array[firstIndex];
+            array[firstIndex] = array[lastIndex];
+            array[lastIndex] = temp;
+        }
+
+        //冒泡排序
+        function bubbleSort(arr) {
+            var len = arr.length;
+            for(var i = 0; i < len; i++) {
+                for(var j = 0; j < len - i; j++) {
+                    if(arr[j] > arr[j+1]) {
+                        swap(arr,j,j+1);
+                    }
+                }
+            }
+            return arr;
+        }
+
+        //插入排序
+        function insertSort(arr) {
+            var len = arr.length;
+            for(var i = 0; i < len; i++) {
+                for(var j = len - i; j >=0; j--) {
+                    if(arr[j+1] < arr[j]) {
+                        swap(arr, j, j+1);
+                    }
+                }
+            }
+            return arr;
+        }
+
+        //选择排序
+        function selectSort(arr) {
+            debugger
+            var len = arr.length;
+            var min;
+            for(var i = 0; i < len - 1; i++) {
+                min = i;
+                for(var j = i + 1; j < len; j++) {
+                    if(arr[min] > arr[j]) {
+                        swap(arr, min, j);
+                    }
+                }
+            }
+            return arr;
+        }
+
+        //快速排序
+        function quickSort(arr) {
+            debugger
+            if(arr.length <= 1) {
+                return arr;
+            }
+            var len = arr.length,
+                left = [],
+                right = [],
+                midNum = parseInt(len/2),
+                mid = [arr[midNum]];
+            for(var i = 0; i < len; i++) {
+                if(i == midNum) continue;
+                if(arr[i] < mid[0]) {
+                    left.push(arr[i]);
+                } else {
+                    right.push(arr[i]);
+                }
+            }
+            return quickSort(left).concat(mid).concat(quickSort(right));
+        }
+
+    </script>
+</body>
+</html>
