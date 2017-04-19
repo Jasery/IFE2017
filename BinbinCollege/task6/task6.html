@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>IFE Javascript Task6</title>
+    <style>
+        .container { width: 80%; margin: auto; margin-top: 20px;}
+        .container textarea { width: 100%; height: 100px;}
+        #search-content { margin: 10px 0; width: 100%;}
+        .clearfix:after { content: " "; display: block; clear: both;}
+        #search-content #search { width: 80%; box-sizing: border-box; float: left;}
+        #search-content #find { width: 20%; box-sizing: border-box; float: right;}
+        #search-display span { display: inline-block; color: orangered;margin: 5px; background-color: forestgreen;}
+    </style>
 </head>
 <body>
-    task6
+    <div class="container">
+        <textarea name="textarea" id="textarea"></textarea>
+        <div id="search-content" class="clearfix">
+            <input type="text" name="search" id="search">
+            <input type="button" name="find" id="find" value="查找">
+        </div>
+        <div id="search-display"></div>
+    </div>
+    <script>
+        function matchSameWord() {
+            var $textarea = document.getElementById("textarea");
+            var $search = document.getElementById("search");
+            var $searchDisplay = document.getElementById("search-display");
+            if(!$textarea || !$search || !$searchDisplay) {
+                return;
+            }
+            var matchText = $search.value;
+            var targetText = $textarea.value;
+            var targetTextArray = targetText.split(/[\s+\,\;\、\，]/).filter(function(item) {return item;});
+            var $spanList = document.createDocumentFragment();
+            targetTextArray.forEach(function (item, index, array) {
+                if(item.indexOf(matchText) >= 0) {
+                    var $span = document.createElement("span");
+                    var textNode = document.createTextNode(item);
+                    $span.appendChild(textNode);
+                    $spanList.appendChild($span);
+                }
+            });
+            if($spanList.childNodes.length > 0) {
+                $searchDisplay.innerHTML = "";
+                $searchDisplay.appendChild($spanList);
+            }
+        }
+
+        window.onload = function() {
+            var searchBtn = document.getElementById("find");
+            if(searchBtn) {
+                searchBtn.addEventListener("click",matchSameWord);
+            }
+        }
+    </script>
 </body>
 </html>
