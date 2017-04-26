@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>IFE Javascript Task7</title>
+    <script src="./task7.js"></script>
+    <style>
+        #content { width: 800px; margin: auto;}
+        #content> div { width: 100%; height: 200px;}
+        div {box-sizing: border-box; border: 1px solid black; display: flex; flex-flow: row wrap; justify-content: space-around; padding: 20px;}
+        .active { border: 5px solid red !important;}
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    <div>
+        <input type="button" id="BFS" value="广度优先遍历">
+        <input type="button" id="DFS" value="深度优先遍历">
+    </div>
+</body>
+</html>
